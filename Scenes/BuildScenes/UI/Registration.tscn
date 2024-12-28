@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://0rbs8i80lnp4"]
+
+[ext_resource type="Texture2D" uid="uid://b6lmdgwvx2btj" path="res://Pictures/UI/button_1_on.png" id="1_6po46"]
+[ext_resource type="Theme" uid="uid://c2d7mg3u5mfi5" path="res://ThemeUI.tres" id="1_ogauj"]
+
+[node name="Registration" type="Node2D"]
+
+[node name="BG" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.243137)
+offset_left = 1208.0
+offset_top = 40.0
+offset_right = 1800.0
+offset_bottom = 920.0
+texture = ExtResource("1_6po46")
+
+[node name="Top" type="Label" parent="."]
+offset_left = 1172.0
+offset_top = 55.0
+offset_right = 1596.0
+offset_bottom = 143.0
+theme = ExtResource("1_ogauj")
+theme_override_font_sizes/font_size = 63
+text = "Процесс"
+horizontal_alignment = 1
+
+[node name="Top2" type="Label" parent="."]
+offset_left = 1409.0
+offset_top = 108.0
+offset_right = 1840.0
+offset_bottom = 160.0
+theme = ExtResource("1_ogauj")
+theme_override_font_sizes/font_size = 45
+text = "авторизации"
+horizontal_alignment = 1
+
+[node name="NickField" type="TextEdit" parent="."]
+offset_left = 1240.0
+offset_top = 288.0
+offset_right = 1768.0
+offset_bottom = 395.0
+theme = ExtResource("1_ogauj")
+theme_override_constants/line_spacing = 22
+theme_override_font_sizes/font_size = 63
+placeholder_text = "..."
+
+[node name="NickTop" type="Label" parent="."]
+offset_left = 1240.0
+offset_top = 256.0
+offset_right = 1528.0
+offset_bottom = 288.0
+theme = ExtResource("1_ogauj")
+theme_override_colors/font_color = Color(1, 1, 1, 0.392157)
+theme_override_font_sizes/font_size = 27
+text = "Ваше игровое имя:"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="NickField2" type="TextEdit" parent="."]
+offset_left = 1240.0
+offset_top = 432.0
+offset_right = 1768.0
+offset_bottom = 539.0
+theme = ExtResource("1_ogauj")
+theme_override_constants/line_spacing = 22
+theme_override_font_sizes/font_size = 63
+placeholder_text = "..."
+
+[node name="NickTop2" type="Label" parent="."]
+offset_left = 1240.0
+offset_top = 400.0
+offset_right = 1528.0
+offset_bottom = 432.0
+theme = ExtResource("1_ogauj")
+theme_override_colors/font_color = Color(1, 1, 1, 0.392157)
+theme_override_font_sizes/font_size = 27
+text = "Пароль от вашего аккаунта:"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Authorization" type="Button" parent="."]
+offset_left = 1416.0
+offset_top = 768.0
+offset_right = 1762.0
+offset_bottom = 881.0
+theme = ExtResource("1_ogauj")
+theme_override_font_sizes/font_size = 72
+text = "Войти"

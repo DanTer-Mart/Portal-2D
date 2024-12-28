@@ -1,0 +1,315 @@
+[gd_scene load_steps=20 format=3 uid="uid://bsao4dadcufcf"]
+
+[ext_resource type="Texture2D" uid="uid://cuqsdnodv858t" path="res://Pictures/BG/BG_menu.png" id="1_yb03e"]
+[ext_resource type="Texture2D" uid="uid://btxmb776x8ido" path="res://Pictures/UI/value.png" id="2_ws5h6"]
+[ext_resource type="Texture2D" uid="uid://sc3fla5nm0ew" path="res://Pictures/UI/button_3_off.png" id="3_has56"]
+[ext_resource type="Texture2D" uid="uid://bcme4xeet7m6k" path="res://Pictures/UI/button_1_off.png" id="3_jstxy"]
+[ext_resource type="Texture2D" uid="uid://b6lmdgwvx2btj" path="res://Pictures/UI/button_1_on.png" id="4_dq3bx"]
+[ext_resource type="Texture2D" uid="uid://bpac7nfeaejbo" path="res://Pictures/UI/button_3_on.png" id="4_jgrgd"]
+[ext_resource type="FontFile" uid="uid://b5henpscy4dmg" path="res://Fonts/Monocraft.otf" id="5_4ha2m"]
+[ext_resource type="Texture2D" uid="uid://v2tytiwdj4bg" path="res://Pictures/UI/icon.png" id="6_lfxmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv2kj"]
+atlas = ExtResource("1_yb03e")
+region = Rect2(0, 0, 150, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt7rs"]
+atlas = ExtResource("1_yb03e")
+region = Rect2(0, 75, 150, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlpef"]
+atlas = ExtResource("1_yb03e")
+region = Rect2(0, 150, 150, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si243"]
+atlas = ExtResource("1_yb03e")
+region = Rect2(0, 225, 150, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucq4m"]
+atlas = ExtResource("1_yb03e")
+region = Rect2(0, 300, 150, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfmds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv2kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt7rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlpef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si243")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucq4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqumy"]
+atlas = ExtResource("2_ws5h6")
+region = Rect2(0, 0, 25, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jihbn"]
+atlas = ExtResource("2_ws5h6")
+region = Rect2(25, 0, 25, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8ywy"]
+atlas = ExtResource("2_ws5h6")
+region = Rect2(0, 7, 25, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otb61"]
+atlas = ExtResource("2_ws5h6")
+region = Rect2(25, 7, 25, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6img"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqumy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jihbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8ywy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otb61")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="MainMenu" type="Node2D"]
+scale = Vector2(1.56, 1.56)
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+z_index = -3
+position = Vector2(614.194, 306.452)
+scale = Vector2(8.5, 8.5)
+sprite_frames = SubResource("SpriteFrames_yfmds")
+
+[node name="GemsValue" type="AnimatedSprite2D" parent="."]
+position = Vector2(415, 43)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_e6img")
+autoplay = "default"
+
+[node name="GemsValue2" type="AnimatedSprite2D" parent="."]
+position = Vector2(133, 43)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_e6img")
+autoplay = "default"
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(0, -96)
+
+[node name="Map" type="Node2D" parent="Buttons"]
+position = Vector2(352, 625.032)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Map"]
+offset_right = 282.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_has56")
+texture_pressed = ExtResource("4_jgrgd")
+texture_hover = ExtResource("3_has56")
+texture_disabled = ExtResource("3_has56")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Map/TextureButton"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 14.0
+offset_right = 225.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 50
+text = "Карта"
+horizontal_alignment = 1
+
+[node name="Play" type="Node2D" parent="Buttons"]
+position = Vector2(16.129, 625.032)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Play"]
+offset_right = 282.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_has56")
+texture_pressed = ExtResource("4_jgrgd")
+texture_hover = ExtResource("3_has56")
+texture_disabled = ExtResource("3_has56")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Play/TextureButton"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 14.0
+offset_right = 225.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 50
+text = "В Бой"
+horizontal_alignment = 1
+
+[node name="Shop" type="Node2D" parent="Buttons"]
+position = Vector2(1131, 224)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Shop"]
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_jstxy")
+texture_pressed = ExtResource("4_dq3bx")
+texture_hover = ExtResource("3_jstxy")
+texture_disabled = ExtResource("3_jstxy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Shop/TextureButton"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 80.0
+offset_right = 86.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 20
+text = "Лавка"
+horizontal_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Shop/TextureButton"]
+position = Vector2(38, 37)
+scale = Vector2(3.96429, 3.96429)
+texture = ExtResource("6_lfxmf")
+region_enabled = true
+region_rect = Rect2(44, 4, 11, 12)
+
+[node name="Profile" type="Node2D" parent="Buttons"]
+position = Vector2(1131, 336)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Profile"]
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_jstxy")
+texture_pressed = ExtResource("4_dq3bx")
+texture_hover = ExtResource("3_jstxy")
+texture_disabled = ExtResource("3_jstxy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Profile/TextureButton"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 80.0
+offset_right = 86.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 20
+text = "Профиль"
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Profile/TextureButton"]
+position = Vector2(38, 37)
+scale = Vector2(3.96429, 3.96429)
+texture = ExtResource("6_lfxmf")
+region_enabled = true
+region_rect = Rect2(64, 64, 12, 12)
+
+[node name="Settings" type="Node2D" parent="Buttons"]
+position = Vector2(1131, 448)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Settings"]
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_jstxy")
+texture_pressed = ExtResource("4_dq3bx")
+texture_hover = ExtResource("3_jstxy")
+texture_disabled = ExtResource("3_jstxy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Settings/TextureButton"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 80.0
+offset_right = 101.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 20
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Settings/TextureButton"]
+position = Vector2(38, 37)
+scale = Vector2(3.58405, 3.58405)
+texture = ExtResource("6_lfxmf")
+region_enabled = true
+region_rect = Rect2(22, 42, 16, 16)
+
+[node name="Club" type="Node2D" parent="Buttons"]
+position = Vector2(1131, 560)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Club"]
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_jstxy")
+texture_pressed = ExtResource("4_dq3bx")
+texture_hover = ExtResource("3_jstxy")
+texture_disabled = ExtResource("3_jstxy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Club/TextureButton"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 80.0
+offset_right = 86.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 20
+text = "Клуб"
+horizontal_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Club/TextureButton"]
+position = Vector2(38, 37)
+scale = Vector2(3.96429, 3.96429)
+texture = ExtResource("6_lfxmf")
+region_enabled = true
+region_rect = Rect2(41, 65, 18, 9)
+
+[node name="Pixers" type="Node2D" parent="Buttons"]
+position = Vector2(1131, 112)
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/Pixers"]
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("3_jstxy")
+texture_pressed = ExtResource("4_dq3bx")
+texture_hover = ExtResource("3_jstxy")
+texture_disabled = ExtResource("3_jstxy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/Pixers/TextureButton"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 80.0
+offset_right = 86.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_4ha2m")
+theme_override_font_sizes/font_size = 20
+text = "Пиксеры"
+horizontal_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Pixers/TextureButton"]
+position = Vector2(38, 37)
+scale = Vector2(3.96429, 3.96429)
+texture = ExtResource("6_lfxmf")
+region_enabled = true
+region_rect = Rect2(23, 3, 14, 14)
