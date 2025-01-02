@@ -13,7 +13,7 @@ config_version=5
 config/name="PixWar-fresh-2"
 config/description="Злобный проект из разряда пиксваров в квадрате!"
 run/main_scene="res://Scenes/Scenes/MainPreloaderScene.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/show_image=false
 config/icon="res://Pictures/UI/button_yes.png"
 
