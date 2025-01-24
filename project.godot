@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="PixWar-fresh-2"
-config/description="Злобный проект из разряда пиксваров в квадрате!"
+config/name="Portal 2D"
+config/description="Dev-test"
+config/version="0"
 run/main_scene="res://Scenes/MainScene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/show_image=false
-config/icon="res://Pictures/UI/button_yes.png"
 
 [autoload]
 
