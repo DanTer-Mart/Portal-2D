@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csd5rj1qp8gc4"
-path="res://.godot/imported/cubes.png-edd91499fef48849b70276a1d81dd2c5.ctex"
+uid="uid://csmfednn7bqji"
+path="res://.godot/imported/handbutton.png-a9839ad6192dcfae27171507fd861f5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pictures/cubes.png"
-dest_files=["res://.godot/imported/cubes.png-edd91499fef48849b70276a1d81dd2c5.ctex"]
+source_file="res://Pictures/handbutton.png"
+dest_files=["res://.godot/imported/handbutton.png-a9839ad6192dcfae27171507fd861f5d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csd5rj1qp8gc4"
-path="res://.godot/imported/cubes.png-edd91499fef48849b70276a1d81dd2c5.ctex"
+uid="uid://c3hbp5prjptl7"
+path="res://.godot/imported/footbutton.png-88782d3c18770a10adba302eaa9645a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pictures/cubes.png"
-dest_files=["res://.godot/imported/cubes.png-edd91499fef48849b70276a1d81dd2c5.ctex"]
+source_file="res://Pictures/footbutton.png"
+dest_files=["res://.godot/imported/footbutton.png-88782d3c18770a10adba302eaa9645a8.ctex"]
 
 [params]
 
