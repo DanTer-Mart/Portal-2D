@@ -16,4 +16,4 @@ func _process(delta):
 	if Input.is_action_just_pressed("w") and is_on_floor():  # Проверяем нажатие клавиши W или пробела для прыжка
 		velocity.y = jump_force
 
-	move_and_slide()
+	move_and_slide()  # Применяем движение с учетом коллизии  # Отладочный вывод
