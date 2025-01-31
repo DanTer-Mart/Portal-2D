@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="2_gshb8"]
 [ext_resource type="SpriteFrames" uid="uid://0k5y3jrudefy" path="res://Levels.tres" id="2_mqrus"]
 [ext_resource type="Script" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
-[ext_resource type="Texture2D" uid="uid://csd5rj1qp8gc4" path="res://Pictures/cubes.png" id="5_tiuyu"]
+[ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw1uj"]
 texture = ExtResource("1_w2jdo")
@@ -24,45 +24,6 @@ sources/1 = SubResource("TileSetAtlasSource_uw1uj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwa5d"]
 size = Vector2(31.9391, 32.6275)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_335v4"]
-atlas = ExtResource("5_tiuyu")
-region = Rect2(0, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rl0t3"]
-atlas = ExtResource("5_tiuyu")
-region = Rect2(18, 0, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kgerj"]
-atlas = ExtResource("5_tiuyu")
-region = Rect2(0, 18, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4mx7"]
-atlas = ExtResource("5_tiuyu")
-region = Rect2(18, 18, 18, 18)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pee2s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_335v4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rl0t3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kgerj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4mx7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk0n5"]
-size = Vector2(90, 90)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_65fxe"]
 animations = [{
 "frames": [{
@@ -76,6 +37,45 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxk8f"]
 size = Vector2(12.3913, 19.9684)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otrp6"]
+atlas = ExtResource("5_tiuyu")
+region = Rect2(0, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sai40"]
+atlas = ExtResource("5_tiuyu")
+region = Rect2(13, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tafs"]
+atlas = ExtResource("5_tiuyu")
+region = Rect2(0, 13, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gdg8"]
+atlas = ExtResource("5_tiuyu")
+region = Rect2(13, 13, 13, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pee2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otrp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sai40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tafs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gdg8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk0n5"]
+size = Vector2(90, 90)
 
 [node name="Level000" type="Node2D"]
 
@@ -103,20 +103,7 @@ texture = ExtResource("1_w2jdo")
 position = Vector2(0.0228281, 0.418304)
 shape = SubResource("RectangleShape2D_lwa5d")
 
-[node name="CubeBody" type="RigidBody2D" parent="."]
-position = Vector2(-9.15527e-05, 0)
-
-[node name="CubeSprite" type="AnimatedSprite2D" parent="CubeBody"]
-position = Vector2(126, 691)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_pee2s")
-
-[node name="CubeForm" type="CollisionShape2D" parent="CubeBody"]
-position = Vector2(126, 691)
-shape = SubResource("RectangleShape2D_wk0n5")
-
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
-physics_interpolation_mode = 1
 position = Vector2(489, 772)
 scale = Vector2(7.58594, 6.92188)
 script = ExtResource("2_sxin4")
@@ -128,3 +115,15 @@ sprite_frames = SubResource("SpriteFrames_65fxe")
 position = Vector2(0.26366, 0.0158081)
 shape = SubResource("RectangleShape2D_rxk8f")
 debug_color = Color(0.959961, 0, 0.518711, 0.42)
+
+[node name="CubeBody" type="RigidBody2D" parent="."]
+position = Vector2(-0.000152588, 0)
+
+[node name="CubeSprite" type="AnimatedSprite2D" parent="CubeBody"]
+position = Vector2(126, 691)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_pee2s")
+
+[node name="CubeForm" type="CollisionShape2D" parent="CubeBody"]
+position = Vector2(126, 691)
+shape = SubResource("RectangleShape2D_wk0n5")

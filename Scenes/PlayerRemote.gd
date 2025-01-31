@@ -4,16 +4,12 @@ var speed = 200  # Скорость движения
 var jump_force = -400  # Сила прыжка
 var gravity = 800  # Гравитация
 
-func _process(delta):
-	velocity.y += gravity * delta  # Применяем гравитацию
-
-	if Input.is_action_pressed("a"):  # Проверяем нажатие клавиши A или стрелки влево
-		velocity.x = -speed
-	elif Input.is_action_pressed("d"):  # Проверяем нажатие клавиши D или стрелки вправо
-		velocity.x = speed
-	else:
-		velocity.x = 0
+func _physics_process(delta: float) -> void:
+	# гравитация
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	var direction: float = Input.get_action_strength("d") - Input.get_action_strength("a")
+	velocity.x = direction * speed
 	if Input.is_action_just_pressed("w") and is_on_floor():  # Проверяем нажатие клавиши W или пробела для прыжка
 		velocity.y = jump_force
-
-	move_and_slide()  # Применяем движение с учетом коллизии  # Отладочный вывод
+	move_and_slide()  # Применяем движение с учетом коллизии
