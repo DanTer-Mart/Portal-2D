@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://gd4prpegry6v"]
+[gd_scene load_steps=22 format=3 uid="uid://gd4prpegry6v"]
 
 [ext_resource type="Texture2D" uid="uid://c03fnfqh2f72d" path="res://Pictures/wall.png" id="1_w2jdo"]
 [ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="2_gshb8"]
 [ext_resource type="SpriteFrames" uid="uid://0k5y3jrudefy" path="res://Levels.tres" id="2_mqrus"]
 [ext_resource type="Script" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
 [ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
+[ext_resource type="Texture2D" uid="uid://dnsbu0w36exdh" path="res://Pictures/prefabcube.png" id="6_0j0qq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw1uj"]
 texture = ExtResource("1_w2jdo")
@@ -77,6 +78,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk0n5"]
 size = Vector2(90, 90)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh8wt"]
+atlas = ExtResource("6_0j0qq")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1vv4"]
+atlas = ExtResource("6_0j0qq")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgx6u"]
+atlas = ExtResource("6_0j0qq")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_muh84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh8wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1vv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgx6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Level000" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="."]
@@ -117,7 +147,8 @@ shape = SubResource("RectangleShape2D_rxk8f")
 debug_color = Color(0.959961, 0, 0.518711, 0.42)
 
 [node name="CubeBody" type="RigidBody2D" parent="."]
-position = Vector2(-0.000152588, 0)
+position = Vector2(581, -757)
+rotation = -0.0713551
 
 [node name="CubeSprite" type="AnimatedSprite2D" parent="CubeBody"]
 position = Vector2(126, 691)
@@ -127,3 +158,8 @@ sprite_frames = SubResource("SpriteFrames_pee2s")
 [node name="CubeForm" type="CollisionShape2D" parent="CubeBody"]
 position = Vector2(126, 691)
 shape = SubResource("RectangleShape2D_wk0n5")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(759, 82)
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_muh84")
