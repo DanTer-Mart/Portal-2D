@@ -1,11 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://gd4prpegry6v"]
+[gd_scene load_steps=33 format=3 uid="uid://gd4prpegry6v"]
 
+[ext_resource type="Script" path="res://Scenes/LevelLogic000.gd" id="1_5kqgx"]
 [ext_resource type="Texture2D" uid="uid://c03fnfqh2f72d" path="res://Pictures/wall.png" id="1_w2jdo"]
-[ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="2_gshb8"]
 [ext_resource type="SpriteFrames" uid="uid://0k5y3jrudefy" path="res://Levels.tres" id="2_mqrus"]
 [ext_resource type="Script" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
+[ext_resource type="Texture2D" uid="uid://djtwdqmiijrii" path="res://Pictures/chel.png" id="5_a43d6"]
 [ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
 [ext_resource type="Texture2D" uid="uid://dnsbu0w36exdh" path="res://Pictures/prefabcube.png" id="6_0j0qq"]
+[ext_resource type="Texture2D" uid="uid://c3hbp5prjptl7" path="res://Pictures/footbutton.png" id="7_d34ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw1uj"]
 texture = ExtResource("1_w2jdo")
@@ -25,19 +27,44 @@ sources/1 = SubResource("TileSetAtlasSource_uw1uj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwa5d"]
 size = Vector2(31.9391, 32.6275)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_skv7j"]
+atlas = ExtResource("5_a43d6")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4vs1"]
+atlas = ExtResource("5_a43d6")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00wtf"]
+atlas = ExtResource("5_a43d6")
+region = Rect2(0, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_synpf"]
+atlas = ExtResource("5_a43d6")
+region = Rect2(24, 32, 24, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_65fxe"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gshb8")
+"texture": SubResource("AtlasTexture_skv7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4vs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00wtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_synpf")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxk8f"]
-size = Vector2(12.3913, 19.9684)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoohg"]
+size = Vector2(13.4459, 23.404)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrp6"]
 atlas = ExtResource("5_tiuyu")
@@ -78,6 +105,32 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk0n5"]
 size = Vector2(90, 90)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyu7a"]
+atlas = ExtResource("7_d34ti")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osg6t"]
+atlas = ExtResource("7_d34ti")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rn2tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyu7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osg6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5ib4"]
+radius = 72.0
+height = 194.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh8wt"]
 atlas = ExtResource("6_0j0qq")
 region = Rect2(0, 0, 24, 24)
@@ -107,7 +160,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxk8f"]
+size = Vector2(13.7096, 1.44469)
+
 [node name="Level000" type="Node2D"]
+script = ExtResource("1_5kqgx")
 
 [node name="Background" type="TileMap" parent="."]
 position = Vector2(957, 530)
@@ -134,16 +191,17 @@ position = Vector2(0.0228281, 0.418304)
 shape = SubResource("RectangleShape2D_lwa5d")
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
-position = Vector2(489, 772)
+position = Vector2(500, 750)
 scale = Vector2(7.58594, 6.92188)
 script = ExtResource("2_sxin4")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="PlayerBody"]
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_65fxe")
 
 [node name="PlayerForm" type="CollisionShape2D" parent="PlayerBody"]
-position = Vector2(0.26366, 0.0158081)
-shape = SubResource("RectangleShape2D_rxk8f")
+position = Vector2(-7.62939e-06, 0.14447)
+shape = SubResource("RectangleShape2D_eoohg")
 debug_color = Color(0.959961, 0, 0.518711, 0.42)
 
 [node name="CubeBody" type="RigidBody2D" parent="."]
@@ -159,7 +217,40 @@ sprite_frames = SubResource("SpriteFrames_pee2s")
 position = Vector2(126, 691)
 shape = SubResource("RectangleShape2D_wk0n5")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="ButtonBody" type="StaticBody2D" parent="."]
+
+[node name="ButtonSprite" type="AnimatedSprite2D" parent="ButtonBody"]
+position = Vector2(1113, 768)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_rn2tg")
+
+[node name="ButtonForm" type="CollisionShape2D" parent="ButtonBody"]
+position = Vector2(1113, 897)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i5ib4")
+
+[node name="PrefabCube" type="AnimatedSprite2D" parent="."]
 position = Vector2(759, 82)
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_muh84")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PrefabCube"]
+
+[node name="Timer" type="Timer" parent="PrefabCube/StaticBody2D"]
+wait_time = 17.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="PrefabCube/StaticBody2D"]
+wait_time = 18.0
+one_shot = true
+autostart = true
+
+[node name="Block" type="CollisionShape2D" parent="PrefabCube/StaticBody2D"]
+position = Vector2(0, 8.77778)
+scale = Vector2(0.842882, 0.769098)
+shape = SubResource("RectangleShape2D_rxk8f")
+debug_color = Color(0.751577, 0.453988, 0.177325, 0.42)
+
+[connection signal="timeout" from="PrefabCube/StaticBody2D/Timer" to="." method="_on_PrefabCubeactive"]
+[connection signal="timeout" from="PrefabCube/StaticBody2D/Timer2" to="." method="_on_PrefabCubedeactive"]
