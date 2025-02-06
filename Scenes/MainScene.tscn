@@ -1,9 +1,9 @@
 [gd_scene load_steps=33 format=3 uid="uid://gd4prpegry6v"]
 
-[ext_resource type="Script" path="res://Scenes/LevelLogic000.gd" id="1_5kqgx"]
+[ext_resource type="Script" uid="uid://cvnmwc077fxwj" path="res://Scenes/LevelLogic000.gd" id="1_5kqgx"]
 [ext_resource type="Texture2D" uid="uid://c03fnfqh2f72d" path="res://Pictures/wall.png" id="1_w2jdo"]
 [ext_resource type="SpriteFrames" uid="uid://0k5y3jrudefy" path="res://Levels.tres" id="2_mqrus"]
-[ext_resource type="Script" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
+[ext_resource type="Script" uid="uid://1tp2deja1yx6" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
 [ext_resource type="Texture2D" uid="uid://djtwdqmiijrii" path="res://Pictures/chel.png" id="5_a43d6"]
 [ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
 [ext_resource type="Texture2D" uid="uid://dnsbu0w36exdh" path="res://Pictures/prefabcube.png" id="6_0j0qq"]
