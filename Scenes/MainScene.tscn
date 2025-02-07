@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://1tp2deja1yx6" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
 [ext_resource type="Texture2D" uid="uid://djtwdqmiijrii" path="res://Pictures/chel.png" id="5_a43d6"]
 [ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
-[ext_resource type="Texture2D" uid="uid://dnsbu0w36exdh" path="res://Pictures/prefabcube.png" id="6_0j0qq"]
 [ext_resource type="Texture2D" uid="uid://c3hbp5prjptl7" path="res://Pictures/footbutton.png" id="7_d34ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw1uj"]
@@ -131,16 +130,19 @@ animations = [{
 radius = 72.0
 height = 194.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q68mp"]
+load_path = "res://.godot/imported/prefabcube.png-7ea81d7cac89a2568dee70c173d3dfb2.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh8wt"]
-atlas = ExtResource("6_0j0qq")
+atlas = SubResource("CompressedTexture2D_q68mp")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1vv4"]
-atlas = ExtResource("6_0j0qq")
+atlas = SubResource("CompressedTexture2D_q68mp")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgx6u"]
-atlas = ExtResource("6_0j0qq")
+atlas = SubResource("CompressedTexture2D_q68mp")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_muh84"]
