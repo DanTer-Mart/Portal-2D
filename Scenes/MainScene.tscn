@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://gd4prpegry6v"]
+[gd_scene load_steps=35 format=3 uid="uid://gd4prpegry6v"]
 
 [ext_resource type="Script" uid="uid://cvnmwc077fxwj" path="res://Scenes/LevelLogic000.gd" id="1_5kqgx"]
 [ext_resource type="Texture2D" uid="uid://c03fnfqh2f72d" path="res://Pictures/wall.png" id="1_w2jdo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://1tp2deja1yx6" path="res://Scenes/PlayerRemote.gd" id="2_sxin4"]
 [ext_resource type="Texture2D" uid="uid://djtwdqmiijrii" path="res://Pictures/chel.png" id="5_a43d6"]
 [ext_resource type="Texture2D" uid="uid://d3x2e0y8wy7d" path="res://Pictures/cubes.png" id="5_tiuyu"]
+[ext_resource type="Script" uid="uid://bbxbr8eynkebe" path="res://Scenes/Interactive.gd" id="6_f140w"]
 [ext_resource type="Texture2D" uid="uid://c3hbp5prjptl7" path="res://Pictures/footbutton.png" id="7_d34ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw1uj"]
@@ -64,6 +65,10 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eoohg"]
 size = Vector2(13.4459, 23.404)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0iob3"]
+radius = 14.3025
+height = 33.7467
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrp6"]
 atlas = ExtResource("5_tiuyu")
@@ -206,6 +211,14 @@ position = Vector2(-7.62939e-06, 0.14447)
 shape = SubResource("RectangleShape2D_eoohg")
 debug_color = Color(0.959961, 0, 0.518711, 0.42)
 
+[node name="Area2D" type="Area2D" parent="PlayerBody"]
+script = ExtResource("6_f140w")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="PlayerBody/Area2D"]
+position = Vector2(0, -1.73363)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0iob3")
+
 [node name="CubeBody" type="RigidBody2D" parent="."]
 position = Vector2(581, -757)
 rotation = -0.0713551
@@ -254,5 +267,7 @@ scale = Vector2(0.842882, 0.769098)
 shape = SubResource("RectangleShape2D_rxk8f")
 debug_color = Color(0.751577, 0.453988, 0.177325, 0.42)
 
+[connection signal="body_entered" from="PlayerBody/Area2D" to="PlayerBody/Area2D" method="_body_entered"]
+[connection signal="body_exited" from="PlayerBody/Area2D" to="PlayerBody/Area2D" method="_body_exited"]
 [connection signal="timeout" from="PrefabCube/StaticBody2D/Timer" to="." method="_on_PrefabCubeactive"]
 [connection signal="timeout" from="PrefabCube/StaticBody2D/Timer2" to="." method="_on_PrefabCubedeactive"]
