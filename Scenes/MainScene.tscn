@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://gd4prpegry6v"]
+[gd_scene load_steps=35 format=3 uid="uid://gd4prpegry6v"]
 
 [ext_resource type="Script" uid="uid://cvnmwc077fxwj" path="res://Scripts/LevelLogic000.gd" id="1_5kqgx"]
 [ext_resource type="Texture2D" uid="uid://c03fnfqh2f72d" path="res://Pictures/wall.png" id="1_w2jdo"]
@@ -68,12 +68,6 @@ size = Vector2(13.4459, 23.404)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f140w"]
 size = Vector2(39.1514, 30.9165)
-
-[sub_resource type="GDScript" id="GDScript_f140w"]
-script/source = "extends RigidBody2D
-func _integrate_forces(state):
-	print(\"Скорость объекта: \", state.linear_velocity)  # Отладочный вывод
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otrp6"]
 atlas = ExtResource("5_tiuyu")
@@ -226,7 +220,6 @@ shape = SubResource("RectangleShape2D_f140w")
 [node name="CubeBody" type="RigidBody2D" parent="."]
 position = Vector2(581, -757)
 rotation = -0.0713551
-script = SubResource("GDScript_f140w")
 
 [node name="CubeSprite" type="AnimatedSprite2D" parent="CubeBody"]
 position = Vector2(126, 691)
