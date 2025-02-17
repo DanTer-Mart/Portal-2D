@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgka367nf0rp5"]
+
+[ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="1_laf7e"]
+[ext_resource type="Script" uid="uid://d1t7dkqbc6f3c" path="res://Scenes/logo.gd" id="2_76xge"]
+
+[sub_resource type="Gradient" id="Gradient_oyf75"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a51mf"]
+gradient = SubResource("Gradient_oyf75")
+width = 1
+
+[node name="Opening" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.5, 489.5)
+scale = Vector2(2433, 1207)
+texture = SubResource("GradientTexture1D_a51mf")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(1673, 769)
+scale = Vector2(20, 20)
+texture = ExtResource("1_laf7e")
+script = ExtResource("2_76xge")

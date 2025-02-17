@@ -17,7 +17,7 @@ func _input(event):
 			var result = space.intersect_point(query)
 			for col in result:
 				if col.collider is RigidBody2D:
-# Проверяем через прямое перекрытие как радар ПВО
+# Проверяем через прямое перекрытие
 					if self.overlaps_body(col.collider):  # Вот правильный метод!
 						grab_offset = col.collider.global_position - mouse_pos
 						grabbed_body = col.collider
@@ -31,13 +31,11 @@ func _physics_process(delta):
 	if grabbed_body:
 		var mouse_pos = get_global_mouse_position()
 		var target_pos = mouse_pos + grab_offset
-		
-		# Жёсткая фиксация позиции как в тисках
+		# Жёсткая фиксация позиции
 		grabbed_body.global_transform.origin = target_pos
 		grabbed_body.angular_velocity = 0
 		grabbed_body.linear_velocity = Vector2.ZERO
-
-# Для дебага добавь визуализацию зоны:
+# Для дебага визуализация зоны
 func _draw():
 	if collision_shape:
 		draw_rect(collision_shape.shape.get_rect(), Color.RED, false)
