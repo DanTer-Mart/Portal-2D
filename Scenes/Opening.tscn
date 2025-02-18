@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgka367nf0rp5"]
+[gd_scene load_steps=8 format=3 uid="uid://bgka367nf0rp5"]
 
 [ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="1_laf7e"]
 [ext_resource type="Script" uid="uid://d1t7dkqbc6f3c" path="res://Scenes/logo.gd" id="2_76xge"]
@@ -10,6 +10,42 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_oyf75")
 width = 1
 
+[sub_resource type="Animation" id="Animation_laf7e"]
+resource_name = "anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.366667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.0625), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_76xge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyf75"]
+_data = {
+&"RESET": SubResource("Animation_76xge"),
+&"anim": SubResource("Animation_laf7e")
+}
+
 [node name="Opening" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,7 +54,14 @@ scale = Vector2(2433, 1207)
 texture = SubResource("GradientTexture1D_a51mf")
 
 [node name="Logo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(1673, 769)
 scale = Vector2(20, 20)
 texture = ExtResource("1_laf7e")
 script = ExtResource("2_76xge")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
+libraries = {
+&"": SubResource("AnimationLibrary_oyf75")
+}
+autoplay = "anim"
