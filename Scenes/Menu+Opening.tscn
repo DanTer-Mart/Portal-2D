@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgka367nf0rp5"]
 
-[ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="1_laf7e"]
-[ext_resource type="Script" uid="uid://d1t7dkqbc6f3c" path="res://Scenes/logo.gd" id="2_76xge"]
-[ext_resource type="FontFile" uid="uid://b5henpscy4dmg" path="res://Fonts/Monocraft.otf" id="3_76xge"]
+[ext_resource type="FontFile" uid="uid://b5henpscy4dmg" path="res://Fonts/Monocraft.otf" id="1_qtwa3"]
+[ext_resource type="Texture2D" uid="uid://c68fv3v1rn3on" path="res://Pictures/logo.png" id="2_hehp6"]
+[ext_resource type="Script" uid="uid://d1t7dkqbc6f3c" path="res://Scripts/logo.gd" id="3_nr4m4"]
 
 [sub_resource type="Gradient" id="Gradient_oyf75"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -12,35 +12,8 @@ gradient = SubResource("Gradient_oyf75")
 width = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_oyf75"]
-font = ExtResource("3_76xge")
+font = ExtResource("1_qtwa3")
 font_size = 61
-
-[sub_resource type="Animation" id="Animation_laf7e"]
-resource_name = "anim"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 0.366667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.0625), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_76xge"]
 length = 0.001
@@ -69,6 +42,33 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_laf7e"]
+resource_name = "anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0.366667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.0625), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oyf75"]
 _data = {
 &"RESET": SubResource("Animation_76xge"),
@@ -94,8 +94,8 @@ vertical_alignment = 1
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1673, 769)
 scale = Vector2(20, 20)
-texture = ExtResource("1_laf7e")
-script = ExtResource("2_76xge")
+texture = ExtResource("2_hehp6")
+script = ExtResource("3_nr4m4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
 libraries = {
