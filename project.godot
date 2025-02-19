@@ -38,6 +38,11 @@ folder_colors={
 "res://Scripts/": "blue"
 }
 
+[filesystem]
+
+import/fbx2gltf/enabled=false
+import/blender/enabled=false
+
 [input]
 
 w={

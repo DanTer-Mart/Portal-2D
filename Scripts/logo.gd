@@ -2,7 +2,7 @@ extends Sprite2D
 
 func _ready() -> void:
 	var viewport_size = get_viewport().get_visible_rect().size
-	var array = [$"../WhoIsAuthor",$".",$"../Portal2",$"../Portal1"]
+	var array = [$"../WhoIsAuthor",$".",$"../Portal2",$"../Portal1"] # циклы
 	for i in array.size():
 		array[i].position = viewport_size / 2
 		if i > 1:
